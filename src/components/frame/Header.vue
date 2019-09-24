@@ -8,7 +8,7 @@
     <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
         <b-nav-item @click="redirect('login')">Login</b-nav-item>
-        <b-nav-item  >Register</b-nav-item>
+        <b-nav-item @click="redirect('Register')">Register</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
     </b-navbar><br><br>

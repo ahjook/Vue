@@ -11,11 +11,11 @@ export default {
         }
     },
 {
-    path:'/login',
-    name:'login',
-    components:resolve => require(['modules/basic/Login.vue'], resolve),
+    path:'/Register',
+    name:'Register',
+    components:resolve => require(['modules/basic/Register.vue'], resolve),
     meta: {
-    tokenRequired :false
+        tokenRequired :false
 }
 }
     ]

@@ -6,7 +6,6 @@
 
         </b-col>
         <b-col id="top" cols = "5">
-
         <b-form @submit="onSubmit" @reset="onReset">
           <b-form-group
             id="input-group-1"
