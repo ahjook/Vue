@@ -1,50 +1,61 @@
 <template>
-  <div id = "body">
-    <b-container class="bv-example-row">
-      <b-row id = "row">
-        <b-col>
 
-        </b-col>
-        <b-col id="top" cols = "5">
-        <b-form @submit="onSubmit" @reset="onReset">
-          <b-form-group
-            id="input-group-1"
-            label="Username"
-            label-for="input-1"
-          >
+  <b-container class="bv-example-row">
+    <b-row>
+      <b-col></b-col>
+     <b-col id="top" cols="5">
+        <b-card
+         title="LOGIN"
+          style="margin-top:20%"
+        ></b-card>
+      <br>
+        <b-form @submit="onSubmit" v-if="show">
+          <b-form-group id="emailAdd" label="Username" label-for="userName" >
             <b-form-input
-              id="input-1"
-              v-model="form.username"
+              id="userName"
+              v-model="form.email"
               type="email"
               required
-              placeholder="Username"
+              placeholder="Enter email"
             ></b-form-input>
           </b-form-group>
 
-          <b-form-group id="input-group-2" label="Password" label-for="input-2">
-            <b-form-input id="input-2" v-model="form.password" required placeholder="Password" type="password"></b-form-input>
+          <b-form-group id="userPassword" label="Password" label-for="password">
+            <b-form-input
+              id="password"
+              v-model="form.name"
+              type="password"
+              required
+              placeholder="Password"
+            ></b-form-input>
           </b-form-group>
 
-          <b-button type="submit" variant="success">Log in</b-button>
-          <b-button type="reset" variant="info">Register</b-button>
-        </b-form>
-        
-        </b-col>
-        <b-col>
+          <b-form-group id="rememberPassword">
+            <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
+              <b-form-checkbox value="me">Remember password?</b-form-checkbox>
+            </b-form-checkbox-group>
+          </b-form-group>
 
-        </b-col>
-      </b-row>
-    </b-container>
-  </div>
+         <center><b-button type="submit" variant="primary">Login</b-button></center>
+        </b-form>
+    
+      </b-col>
+
+      <b-col></b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
+//eslint-disable-next-line
+/*eslint-disable*/
 export default {
   data() {
     return {
       form: {
-        username: "",
-        password: "",
+        email: "",
+        name: "",
+        checked: []
       },
       show: true
     };
@@ -52,17 +63,12 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      // console.log("Username: " + this.form.username);
-      // console.log("Password: " + this.form.password);
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      this.form.username = "";
-      this.form.password = "";
+      console.log(JSON.stringify(this.form));
     }
   }
 };
 </script>
+
 
 <style scoped>
 body{
@@ -74,6 +80,7 @@ body{
   padding: 3vw 4vw 5vw;
   border-radius: 4px;
   text-align: center;
+  margin-top:5%;
 }
 
 </style>

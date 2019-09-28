@@ -1,113 +1,107 @@
 <template>
-  <div id = "body">
-    <b-container class="bv-example-row">
-      <b-row id = "row">
-        <b-col>
+<body>
+  <b-container class="bv-example-row">
+    <b-row>
+      <b-col></b-col>
+      <b-col id = "top" cols="5">
+        <b-card 
+         title="SIGN UP"
+          style="margin-top:20%"
+        ></b-card>
+        <br>
+          <b-form @submit="onSubmit" v-if="show">
 
-        </b-col>
-        <b-col id="top" cols = "5">
-
-        <b-form @submit="onSubmit" @reset="onReset">
-
-        <b-form-group
-            id = "input-group-3"
-            label="Firstname"
-            label-for=input-3
-            >
-            <b-form-input
-              id="input-3"
-              v-model="form.firstname"
-              type="Fname"
-              required
-              placeholder="Firstname"
-            ></b-form-input>
+            <b-form-group id="lastName"  label="Lastname" label-for="userLastName">
+              <b-form-input
+                id="userLastName"
+                v-model="form.userLastName"
+                type="text"
+                required
+                placeholder="LastName"
+              ></b-form-input>
             </b-form-group>
 
-        <b-form-group
-            id = "input-group-3"
-            label="Lastname"
-            label-for=input-3
-            >
-            <b-form-input
-              id="input-3"
-              v-model="form.firstname"
-              type="Lname"
-              required
-              placeholder="Lastname"
-            ></b-form-input>
+            <b-form-group id="firstName" label="Firstname" label-for="userFirstName">
+              <b-form-input
+                id="userFirstName"
+                v-model="form.userFirstName"
+                type="text"
+                required
+                placeholder="FirstName"
+              ></b-form-input>
             </b-form-group>
 
-          <b-form-group
-            id="input-group-1"
-            label="Username"
-            label-for="input-1"
-          >
-            <b-form-input
-              id="input-1"
-              v-model="form.username"
-              type="email"
-              required
-              placeholder="Username"
-            ></b-form-input>
-          </b-form-group>
+            <b-form-group id="emailAdd" label="Email Address" label-for="userEmail">
+              <b-form-input
+                id="userEmail"
+                v-model="form.userEmail"
+                type="email"
+                required
+                placeholder="Enter email"
+              ></b-form-input>
+            </b-form-group>
 
-          <b-form-group id="input-group-2" label="Password" label-for="input-2">
-            <b-form-input id="input-2" v-model="form.password" required placeholder="Password" type="password"></b-form-input>
-          </b-form-group>
+            <b-form-group id="initialUserPassword" label="Password" label-for="initialPassword">
+              <b-form-input
+                id="initialPassword"
+                v-model="form.initialPassword"
+                type="password"
+                required
+                placeholder="Password"
+              ></b-form-input>
+            </b-form-group>
 
-          <b-button type="submit" variant="success">Cancel</b-button>
-          <b-button type="reset" variant="info">Register</b-button>
-        </b-form>
-        
-        </b-col>
-        <b-col>
+            <b-form-group id="confirmUserPassword" label="Confirmed Passsword" label-for="confirmedPassword">
+              <b-form-input
+                id="confirmedPassword"
+                v-model="form.confirmedPassword"
+                type="password"
+                required
+                placeholder="Confirm Password"
+              ></b-form-input>
+            </b-form-group>
 
-        </b-col>
-      </b-row>
-    </b-container>
-  </div>
+            <center><b-button type="submit" variant="primary">Submit</b-button></center>
+          </b-form>
+      </b-col>
+
+      <b-col></b-col>
+    </b-row>
+  </b-container>
+</body>
 </template>
-
 <script>
 export default {
   data() {
     return {
       form: {
-        firstname:"",
-        lastname:"",
-        username: "",
-        password: "",
+        userLastName: "",
+        userFirstName: "",
+        userEmail: "",
+        initialPassword: "",
+        confirmedPassword: "",
       },
       show: true
     };
   },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      // console.log("Username: " + this.form.username);
-      // console.log("Password: " + this.form.password);
-    },
-    onReset(evt) {
-      evt.preventDefault();
-      this.form.firstname = "",
-      this.form.lastname = "",
-      this.form.username = "";
-      this.form.password = "";
+   methods: {
+      checkForm(event) {
+        event.preventDefault();
+        event.target.classList.add('was-validated');
+      }
     }
-  }
 };
 </script>
 
 <style scoped>
-body{
-  background-image: url(http://www.pptbackgrounds.org/uploads/children-education-backgrounds-wallpapers.jpg);
-}
+
 #top{
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCuAxu_07_sc_sA-NA_bXTY4NuIUB7CoxgclMx24fcUdvTsUHt);
   background-size: cover;
   padding: 3vw 4vw 5vw;
   border-radius: 4px;
   text-align: center;
+  margin-top:5%;
 }
 
 </style>

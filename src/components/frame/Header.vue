@@ -1,37 +1,44 @@
 <template>
 <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">StudenteDrocer</b-navbar-brand>
+    <b-navbar-brand href="#" id="title">StudenteDrocer</b-navbar-brand>
+    
+    <v-spacer></v-spacer>
+    
+    
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-        <b-nav-item @click="redirect('login')">Login</b-nav-item>
-        <b-nav-item @click="redirect('Register')">Register</b-nav-item>
+  <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item v-on:click="redirect('/login')">Login</b-nav-item>
+        <b-nav-item v-on:click="redirect('/register')">Register</b-nav-item>
+        
       </b-navbar-nav>
-    </b-collapse>
-    </b-navbar><br><br>
-    <tutorialForm></tutorialForm>
+  </b-collapse>
+
+    </b-navbar>
+    
 </div>
 </template>
-
 <style scoped lang="scss">
-@import "~../../assets/colors.scss";
- #title {
-  color: $warning !important;
-}
+@import "~assets/colors.scss";
+      #title{
+        color: $danger !important;
+      }
+      #login{
+          color: $primary !important;
+      }
+      #register{
+        color: $warning !important;
+      }
 </style>
 <script>
-import tutorialForm from '../form/Form.vue'
-export default {
-  name: 'Header',
-  components: {
-    tutorialForm
-  },
-  data() {
-      return {
-      }
-    }
-}
+ import ROUTER from '../../router'
+ export default {
+     methods : {
+         redirect (route) {
+             ROUTER.push(route)
+         }
+     }
+ }
 </script>

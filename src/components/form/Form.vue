@@ -65,9 +65,6 @@ export default {
 </script>
 
 <style scoped>
-body{
-  background-image: url(http://www.pptbackgrounds.org/uploads/children-education-backgrounds-wallpapers.jpg);
-}
 #top{
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCuAxu_07_sc_sA-NA_bXTY4NuIUB7CoxgclMx24fcUdvTsUHt);
   background-size: cover;
