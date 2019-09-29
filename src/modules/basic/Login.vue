@@ -10,9 +10,9 @@
         ></b-card>
       <br>
         <b-form @submit="onSubmit" v-if="show">
-          <b-form-group id="emailAdd" label="Username" label-for="userName" >
+          <b-form-group id="emailAdd" label="Email" label-for="email" >
             <b-form-input
-              id="userName"
+              id="email"
               v-model="form.email"
               type="email"
               required
@@ -20,7 +20,7 @@
             ></b-form-input>
           </b-form-group>
 
-          <b-form-group id="userPassword" label="Password" label-for="password">
+          <b-form-group id="Password" label="Password" label-for="password">
             <b-form-input
               id="password"
               v-model="form.password"
@@ -54,8 +54,8 @@ export default {
     return {
       form: {
         email: "",
-        name: "",
-        checked: []
+        password: "",
+        // checked: []
       },
       show: true
     };

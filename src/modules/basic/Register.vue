@@ -10,24 +10,13 @@
         ></b-card>
         <br>
           <b-form @submit="onSubmit" v-if="show">
-
-            <b-form-group id="lastName"  label="Lastname" label-for="userLastName">
+            <b-form-group id="UserName" label="Username" label-for="username">
               <b-form-input
-                id="userLastName"
-                v-model="form.userLastName"
+                id="username"
+                v-model="form.username"
                 type="text"
                 required
-                placeholder="LastName"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="firstName" label="Firstname" label-for="userFirstName">
-              <b-form-input
-                id="userFirstName"
-                v-model="form.userFirstName"
-                type="text"
-                required
-                placeholder="FirstName"
+                placeholder="Enter UserName"
               ></b-form-input>
             </b-form-group>
 
@@ -37,24 +26,24 @@
                 v-model="form.userEmail"
                 type="email"
                 required
-                placeholder="Enter email"
+                placeholder="Enter EmailAdd"
               ></b-form-input>
             </b-form-group>
 
             <b-form-group id="initialUserPassword" label="Password" label-for="initialPassword">
               <b-form-input
                 id="initialPassword"
-                v-model="form.initialPassword"
+                v-model="form.password"
                 type="password"
                 required
                 placeholder="Password"
               ></b-form-input>
             </b-form-group>
 
-            <b-form-group id="confirmUserPassword" label="Confirmed Passsword" label-for="confirmedPassword">
+            <b-form-group id="confirmPassword" label="Confirmed Passsword" label-for="confirmPassword">
               <b-form-input
-                id="confirmedPassword"
-                v-model="form.confirmedPassword"
+                id="confirmPassword"
+                v-model="form.confirmPassword"
                 type="password"
                 required
                 placeholder="Confirm Password"
@@ -71,24 +60,31 @@
 </body>
 </template>
 <script>
+import AUTH from 'services/auth'
 export default {
   data() {
     return {
       form: {
-        userLastName: "",
-        userFirstName: "",
+        username: "",
         userEmail: "",
         initialPassword: "",
-        confirmedPassword: "",
+        confirmPassword: "",
       },
       show: true
     };
   },
    methods: {
-      checkForm(event) {
-        event.preventDefault();
-        event.target.classList.add('was-validated');
-      }
+     onSubmit(evt){
+      evt.preventDefault();
+      sessionStorage.setItem("Username", this.form.username)
+      sessionStorage.setItem("Email", this.form.userEmail)
+      sessionStorage.setItem("Password", this.form.password)
+      AUTH.register(this.form.email, this.form.password)
+     }
+      // checkForm(event) {
+      //   event.preventDefault();
+      //   event.target.classList.add('was-validated');
+      // }
     }
 };
 </script>

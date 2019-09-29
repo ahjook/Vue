@@ -9,15 +9,25 @@
 </template>
 
 <script>
-import Header from './components/frame/Header.vue';
-import Body from './components/frame/Body.vue';
-import Sidebar from './components/frame/Sidebar.vue';
+import AUTH from 'services/auth'
+import Header from 'components/frame/Header.vue'
+import Body from 'components/frame/Body.vue'
+import Sidebar from 'components/frame/Sidebar.vue'
+// import dashboard from 'modules/basic/Dashboard.vue'
+
 export default {
   name: 'app',
+  auth: AUTH,
+  data(){
+    return{
+
+    }
+  },
   components: {
     Header,
     Body,
-    Sidebar
+    Sidebar,
+    // dashboard
   }
 }
 </script>
