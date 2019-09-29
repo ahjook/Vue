@@ -3,10 +3,6 @@
     <b-navbar toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#" id="title">StudenteDrocer</b-navbar-brand>
     
-    <v-spacer></v-spacer>
-    
-    
-
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
   <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
@@ -32,7 +28,7 @@
       }
 </style>
 <script>
- import ROUTER from '../../router'
+ import ROUTER from 'router'
  export default {
      methods : {
          redirect (route) {

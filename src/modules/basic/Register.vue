@@ -20,13 +20,13 @@
               ></b-form-input>
             </b-form-group>
 
-            <b-form-group id="emailAdd" label="Email Address" label-for="userEmail">
+            <b-form-group id="emailAddress" label="Email Address" label-for="userEmail">
               <b-form-input
                 id="userEmail"
                 v-model="form.userEmail"
                 type="email"
                 required
-                placeholder="Enter EmailAdd"
+                placeholder="Enter Email"
               ></b-form-input>
             </b-form-group>
 

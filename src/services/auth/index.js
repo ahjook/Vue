@@ -16,7 +16,7 @@ export default {
         })
         ROUTER.push('/login')
     },
-    login(username,password){
+    login( username , password ){
         for(let i = 0; i < this.registeredUser.length; i++){
             if(this.registeredUser[i].username === username && this.registeredUser[i].password === password){
                 ROUTER.push('/dashboard')

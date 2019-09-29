@@ -26,7 +26,7 @@ export default {
     {
         path : '/dashboard',
         name : 'dashboard',
-        component : resolve => require(['modules/basic/Register.vue'], resolve),
+        component : resolve => require(['modules/basic/Dashboard.vue'], resolve),
         meta : {
             tokenRequired : false
             }

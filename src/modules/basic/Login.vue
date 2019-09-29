@@ -10,7 +10,7 @@
         ></b-card>
       <br>
         <b-form @submit="onSubmit" v-if="show">
-          <b-form-group id="emailAdd" label="Email" label-for="email" >
+          <b-form-group id="email" label="Email Address" label-for="email" >
             <b-form-input
               id="email"
               v-model="form.email"
@@ -49,7 +49,8 @@
 <script>
 //eslint-disable-next-line
 /*eslint-disable*/
-export default {
+// import AUTH from 'services/auth'
+ export default {
   data() {
     return {
       form: {
@@ -63,6 +64,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
+      // AUTH.login(this.form.email, this.form.password)
       console.log(JSON.stringify(this.form));
     }
   }
