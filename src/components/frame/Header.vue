@@ -23,7 +23,7 @@
 <style scoped lang="scss">
 @import "~assets/colors.scss";
       #title{
-        color: $danger !important;
+        color: $primary !important;
       }
       #login{
           color: $primary !important;

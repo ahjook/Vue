@@ -23,7 +23,7 @@
           <b-form-group id="userPassword" label="Password" label-for="password">
             <b-form-input
               id="password"
-              v-model="form.name"
+              v-model="form.password"
               type="password"
               required
               placeholder="Password"
