@@ -13,7 +13,7 @@
                 <hr>
                 <b-card-text>
                     <h6>Username: {{username}}</h6>
-                    <h6>Email:{{email}}</h6>
+                    <h6>Email: {{email}}</h6>
                 </b-card-text>
             </b-card-body>
             </center>

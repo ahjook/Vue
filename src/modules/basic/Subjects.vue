@@ -5,7 +5,7 @@
     </div>
         <center><b-card text-align id="card" img-top tag="article" style="max-width: 30rem;" class="mb-2">
             <b-form-group label-size="lg" label-for="input-lg">
-             <h1>Subjects...</h1>
+             <h1>Schedules...</h1>
             <label id="Subject">Subject:</label>
                 <b-form-input v-model="infos.subject" id="subject" size="lg"></b-form-input>
             <label id="teacher">Teacher:</label><br>
