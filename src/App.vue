@@ -2,7 +2,7 @@
   <div id="app">
   <Header v-show = "$route.path === '/login' || $route.path === '/register'|| $route.path === '/' ? true: false"></Header>
   <AppBody></AppBody>
-  <Sidebar v-show = "$route.path === '/dashboard' || $route.path === '/Subjects'|| $route.path === '/PersonalInfo' ? true: false">
+  <Sidebar v-show = "$route.path === '/dashboard' || $route.path === '/Subjects'|| $route.path === '/Account' ? true: false">
   </Sidebar>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->

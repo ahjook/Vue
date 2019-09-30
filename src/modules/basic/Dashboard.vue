@@ -1,22 +1,31 @@
 <template>
   <div id="card" >
-    <center>
-      <h1>DASHBOARD</h1>
+    <center><hr>
+      <h2></h2>
+       <h1></h1>
       <div>
-        <b-img :src="require('assets/user.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
+        <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img><hr>
       </div>
-      <h2>Hi {{Uname}}</h2>
-      <p>Welcome to the Dashboard</p>
+      <h2>Hi {{Uname}},</h2>
+      <h2>Welcome to your Dashboard</h2>
+      <p></p>
     </center>
   </div>
 </template>
 <style scoped>
 #card {
-  margin-top: 2em;
+  margin-top: 0px;
+  margin-left: 380px;
+  margin-bottom:0px;
+  width:560px;
+  height:700px;
 }
 #userIcon {
-  width: 15%;
+  width: 35%;
   height: auto;
+}
+h2 {
+  font-size:50px;
 }
 </style>
 
@@ -36,3 +45,4 @@ export default {
   }
 };
 </script>
+

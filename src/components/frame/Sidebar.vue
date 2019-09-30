@@ -13,8 +13,8 @@ export default {
           hiddenOnCollapse: true
         },
         {
-          href: "/Dashboard",
-          title: "Dashboard",
+          href: "/Account",
+          title: "Account",
           icon: "assets/user.png",
         },
         {
@@ -23,17 +23,12 @@ export default {
           icon: "assets/user.png",
         },
         {
-          href: "/PersonalInfo",
-          title: "Personal Info",
-          icon: "assets/user.png",
-        },
-        {
           href: "/Login",
           title: "Logout",
           icon: "assets/user.png",
         }
       ]
-    };
+    }
   }
 };
 </script> 

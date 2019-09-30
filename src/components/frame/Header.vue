@@ -6,8 +6,8 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
   <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+        <b-form-input size="sm" class="my-sm-2" placeholder="Search"></b-form-input>
+        <b-button size="sm" class="my-2 my-sm-2" type="submit">Search</b-button>
         <b-nav-item v-on:click="redirect('/register')">Register</b-nav-item>
         <b-nav-item v-on:click="redirect('/login')">Login</b-nav-item>
       </b-navbar-nav>

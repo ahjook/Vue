@@ -31,5 +31,21 @@ export default {
             tokenRequired: false
         },
     },
-    ]
+    {
+        path: '/account',
+        name: 'account',
+        component: resolve => require(['modules/basic/Account.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        },
+    },
+    {
+        path: '/Subjects',
+        name: 'Subjects',
+        component: resolve => require(['modules/basic/Subjects.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        },
+    
+    }]
 }
