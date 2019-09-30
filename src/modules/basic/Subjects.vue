@@ -1,103 +1,97 @@
 <template>
-  <div>
-    <div class="jumbotron">
-      <h1>Subjects</h1>
+    <div>
+        <div class="jumbotron">
+        <h1></h1>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <center>
-            <b-card id="card">
-              <table class="table">
-                <thead>
-                  <tr>
+        <center><b-card text-align id="card" img-top tag="article" style="max-width: 30rem;" class="mb-2">
+            <b-form-group label-size="lg" label-for="input-lg">
+             <h1>Subjects...</h1>
+            <label id="Subject">Subject:</label>
+                <b-form-input v-model="infos.subject" id="subject" size="lg"></b-form-input>
+            <label id="teacher">Teacher:</label><br>
+                <b-form-input v-model="infos.teacher" id="teacher" size="lg"></b-form-input><br>
+            <label id="time">Time:</label>
+                <b-form-input v-model="infos.time" id="time" size="lg"></b-form-input>
+            <label id="time">Day:</label>
+                <b-form-input v-model="infos.day" id="day" size="lg"></b-form-input>
+            <label id="room">Room:</label>
+                <b-form-input v-model="infos.room" id="room" size="lg"></b-form-input><br>
+            <b-button variant="primary" @click="addItem">Add Subject</b-button>
+            </b-form-group>
+        </b-card></center>
+        <center><b-card text-align id="card" img-top tag="article" style="max-width: 40rem;" class="mb-2y">
+        <table class="table">
+            <thead>
+                <tr >
                     <th scope="col">SUBJECT</th>
                     <th scope="col">TEACHER</th>
-                    <th scope="col">TIME </th>
+                    <th scope="col">TIME</th>
                     <th scope="col">DAY</th>
-                    <th scope="col">VENUE</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ul>
-                    <li> {{subject}}</li>
-                    <li> {{techer}}</li>
-                    <li> {{time}}</li>
-                    <li> {{subject}}</li>
-                    <li> {{day}}</li>
-                    <li> {{venue}}</li>
-                    <!-- <li v-for="list">{{ content.subject}}</li> -->
-                  </ul>
-                  <hr>
-                </tbody>
-              </table>
-            </b-card>
-          </center>
-        </div>
-        <div class="col">
-          <b-card id="card1">
-            <b-form-group >
-              <label id="Subject">Subject:</label>
-              <b-form-input v-model="content.subject" size="sm"></b-form-input>
-              <label id="teacher">Teacher:</label>
-              <b-form-input v-model="content.teacher" size="sm"></b-form-input>
-              <label id="time">Time:</label>
-              <b-form-input v-model="content.time" size="sm"></b-form-input>
-              <label id="time">Day:</label>
-              <b-form-input v-model="content.day" size="sm"></b-form-input>
-              <label id="venue">Venue:</label>
-              <b-form-input v-model="content.venue" size="sm"></b-form-input>
-              <br>
-              <center>
-                <b-button variant="primary" @click="submit">Add Subject</b-button>
-              </center>
-            </b-form-group>
-          </b-card>
-        </div>
-      </div>
+                    <th scope="col">ROOM</th>
+                </tr>
+            </thead>
+        <tbody v-for="(item, index) in this.rows" :key="index">
+            <tr >
+                <td>{{ item.subject }}</td>
+                <td>{{ item.teacher }}</td>
+                <td>{{ item.time }}</td>
+                <td>{{ item.day }}</td>
+                <td>{{ item.room }}</td>
+
+            </tr>
+        </tbody>
+        </table>
+    </b-card>
+    </center>
     </div>
-  </div>
 </template>
 
 
 <style>
-/* #card {
-  margin-top: 20px;
-} */
-.jumbotron {
-  padding: 20px;
-  text-align: center;
-}
 #card {
-  width: 400px;
+    background-color:transparent;
+
+}
+.jumbotron {
+    padding: 20px;
+    text-align: center;
 }
 #card1 {
-  width: 400px;
+    background-color:transparent;
+  
 }
 </style>
 
 <script>
 export default {
-  data(){
+data() {
     return {
-      content: {
-        subject: "",
-        teacher: "",
-        time: "",
-        day: "",
-        venue: ""
-      }
-    };
-  },
-  methods: {
-    submit: function(e) {
-      e.preventDefault();
-      sessionStorage.getItem("Subject", this.content.subject),
-        sessionStorage.getItem("Teacher", this.content.teacher),
-        sessionStorage.getItem("Time", this.content.time),
-        sessionStorage.getItem("Day", this.content.day),
-        sessionStorage.getItem("Venue", this.content.venue);
+        rows:[],
+        infos: {
+            subject: "",
+            teacher: "",
+            time: "",
+            day: "",
+            room: "",
+        }
     }
-  }
+},
+methods: {
+    addItem() {
+        var object = {
+            subject: this.infos.subject,
+            teacher: this.infos.teacher,
+            time: this.infos.time,
+            day: this.infos.day,
+            room: this.infos.room
+        };
+        this.rows.push( object )
+        this.infos.subject = ""
+        this.infos.teacher = ""
+        this.infos.time = ""
+        this.infos.day= ""
+        this.infos.room = ""
+        }
+    }
 };
 </script>

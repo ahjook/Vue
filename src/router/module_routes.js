@@ -2,29 +2,40 @@
 let beforeEnter = (to ,from ,next) => {
 
  AUTH.currentPath = to.path
+//  let userID = parseInt(localStorage.getItem('accout_id'))
+// let token = localStorage.getItem('usertoken')
+// if(token !== null && userID > 0){
+// if(to.path === '/' || to.path === '/'){
+// next({path: '/templates'})
+// }else if(to.meta.tokenRequired === true){
+// next({path: '/'})
+// }else{
+// next()
+// }
+// }
+next()
 // let userID = parseInt(localStorage.getItem('account_id'))
 // let token  = localStorage.getItem('usertoken')
 // // if(token !== null && )
 //console.log();
-next()
+// next()
 
 }
 
 var devRoutes = [] ;
-let app = require('./app.js')
+let app = require('router/app.js')
 devRoutes = devRoutes.concat(app.default.routes)
 for(let x =0 ; x < devRoutes.length; x++){
     devRoutes[x]['beforeEnter'] =  beforeEnter
 }
-//deafualt route
+//default route
 let routes = [
 {
     path:'/',
     name:'home',
     components:resolve => require (['modules/basic/Login.vue'] ,resolve),
     beforeEnter:beforeEnter
-}
-]
+}]
 //export
 routes = routes.concat(devRoutes)
 export default{

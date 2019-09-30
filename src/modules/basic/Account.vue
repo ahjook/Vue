@@ -6,21 +6,21 @@
      <center><div>
         <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
       </div></center><hr>
-      <b-card no-body class="overflow-hidden" style="max-height: 560px;" >
+      <b-card no-body class="overflow-hidden" id="hello" >
         <b-row no-gutters>
           <b-col md="12">
           <center><b-card-body title="Personal Information"> 
                 <hr>
                 <b-card-text>
-                <h6>Username: {{username}}</h6>
-                <h6>Email:{{email}}</h6>
-                <h6 type="password">Password: {{password}}</h6>
-              </b-card-text>
+                    <h6>Username: {{username}}</h6>
+                    <h6>Email:{{email}}</h6>
+                </b-card-text>
             </b-card-body>
             </center>
           </b-col>
         </b-row>
-      </b-card>
+      </b-card><br>
+        <center><b-button variant="danger">Edit Information</b-button></center>
     </div>
   </div>
 </template>
@@ -37,6 +37,10 @@
     width:560px;
     height:700px;
 }
+#hello {
+     background-color:transparent;
+     max-height: 560px;
+}
 
 </style>
 <script>
@@ -46,7 +50,7 @@ export default {
     return {
       username: sessionStorage.getItem("Username"),
       email: sessionStorage.getItem("Email"),
-      password: sessionStorage.getItem("Password")
+    //   password: sessionStorage.getItem("Password")
     };
   },
 };

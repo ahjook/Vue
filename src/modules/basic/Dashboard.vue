@@ -19,6 +19,7 @@
   margin-bottom:0px;
   width:560px;
   height:700px;
+  background-color:transparent;
 }
 #userIcon {
   width: 35%;
