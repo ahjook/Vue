@@ -21,16 +21,14 @@ export default {
             if(this.registeredUser[i].username === username && this.registeredUser[i].password === password){
                 ROUTER.push('/dashboard')
                 return this.registeredUser[i]           
-            }else{
-                alert("Email or Password is incorrect!")
             }
         }
         return null
     },
-    // logout(){
-    //     this.registeredUser = null
-    //     ROUTER.push('/login')
-    // },
+    logout(){
+        this.registeredUser = null
+        ROUTER.push('/login')
+    },
 
     
 

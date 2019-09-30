@@ -10,13 +10,12 @@
         ></b-card>
       <br>
         <b-form @submit="onSubmit" v-if="show">
-          <b-form-group id="email" label="Email Address" label-for="email" >
+          <b-form-group id="username" label="Username" label-for="username" >
             <b-form-input
-              id="email"
-              v-model="form.email"
-              type="email"
+              id="username"
+              v-model="form.username"
               required
-              placeholder="Enter email"
+              placeholder="Enter Username"
             ></b-form-input>
           </b-form-group>
 
@@ -49,12 +48,12 @@
 <script>
 //eslint-disable-next-line
 /*eslint-disable*/
-// import AUTH from 'services/auth'
+import AUTH from 'services/auth'
  export default {
   data() {
     return {
       form: {
-        email: "",
+       username: "",
         password: "",
         // checked: []
       },
@@ -64,7 +63,7 @@
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      // AUTH.login(this.form.email, this.form.password)
+      AUTH.login(this.form.email, this.form.password)
       console.log(JSON.stringify(this.form));
     }
   }
@@ -73,7 +72,7 @@
 
 
 <style scoped>
-body{
+#body{
   background-image: url(http://www.pptbackgrounds.org/uploads/children-education-backgrounds-wallpapers.jpg);
 }
 #top{

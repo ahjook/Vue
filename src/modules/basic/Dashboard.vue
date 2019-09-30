@@ -2,7 +2,6 @@
   <div id="card" >
     <center>
       <h1>DASHBOARD</h1>
-     <hr>
       <div>
         <b-img :src="require('assets/user.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
       </div>

@@ -1,5 +1,5 @@
 <template>
-<body>
+<body id="app">
   <b-container class="bv-example-row">
     <b-row>
       <b-col></b-col>
@@ -51,7 +51,10 @@
             </b-form-group>
 
             <center><b-button type="submit" variant="primary">Submit</b-button></center>
-          </b-form>
+          </b-form><br>
+             <p>Already have an account?</p>
+        <router-link to="/Login">Login</router-link>
+
       </b-col>
 
       <b-col></b-col>
@@ -90,7 +93,7 @@ export default {
 </script>
 
 <style scoped>
-#template {
+#body {
   background-image:url(https://thumbs.dreamstime.com/b/tropical-beach-sand-summer-holiday-background-travel-vacation-free-space-text-product-placement-93404396.jpg);
   background-size: cover;
 }
