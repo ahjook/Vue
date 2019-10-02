@@ -63,7 +63,7 @@
 </style>
 
 <script>
-import AUTH from 'services/auth'
+// import AUTH from 'services/auth'
 export default {
 data() {
     return {
@@ -86,7 +86,7 @@ methods: {
             day: this.infos.day,
             room: this.infos.room
         };
-        AUTH.addSubjects(this.infos.subject,this.infos.teacher,this.infos.time,this.infos.day,this.infos.room)
+        // AUTH.addSubjects(this.infos.subject,this.infos.teacher,this.infos.time,this.infos.day,this.infos.room)
         this.rows.push( object )
         this.infos.subject = ""
         this.infos.teacher = ""
