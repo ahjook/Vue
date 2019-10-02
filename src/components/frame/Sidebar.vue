@@ -13,22 +13,35 @@ export default {
           hiddenOnCollapse: true
         },
         {
-          href: "/Account",
-          title: "Account",
-          icon: "assets/user.png",
+          href: "/Dashboard",
+          title: "Dashboard",
+          icon: "fa fa-user"
         },
         {
+          href: "/Account",
+          title: "Account",
+          icon: "fa fa-user",
+          child: [
+            {
+              href: '/Profile',
+              title: 'Edit Profile'
+            }
+          ]
+        },
+        {
+        
           href: "/Subjects",
           title: "Subjects",
-          icon: "assets/user.png",
+         icon: "fa fa-user"
         },
         {
           href: "/Login",
           title: "Logout",
-          icon: "assets/user.png",
+          icon: "fa fa-user"
         }
       ]
     }
   }
 };
 </script> 
+

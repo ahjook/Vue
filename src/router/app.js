@@ -40,9 +40,17 @@ export default {
         },
     },
     {
-        path: '/Subjects',
-        name: 'Subjects',
+        path: '/subjects',
+        name: 'subjects',
         component: resolve => require(['modules/basic/Subjects.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        },
+    },
+    {
+        path:'/profile',
+        name:'Profile',
+        component: resolve => require(['modules/basic/Profile.vue'], resolve),
         meta: {
             tokenRequired: false
         },

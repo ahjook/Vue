@@ -20,8 +20,7 @@
           </b-col>
         </b-row>
       </b-card><br>
-        <center><b-button variant="danger">Edit Information</b-button></center>
-    </div>
+      </div>
   </div>
 </template>
 
