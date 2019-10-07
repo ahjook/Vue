@@ -4,7 +4,7 @@
         <h1></h1>
         <h1></h1>
       <div>
-        <h1>Edit Profile & Personal Information</h1>
+        <h1>Edit Information</h1>
       </div>
       <hr>
       <div class="card">
@@ -78,8 +78,8 @@ export default {
 #container {
   margin-left: 25%;
   width:560px;
-  height:700px;
-  background-color:transparent;
+  height:800px;
+  
 }
 .card{
     background-color:transparent; 

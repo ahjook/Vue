@@ -1,26 +1,42 @@
  import AUTH from '../services/auth'
 let beforeEnter = (to ,from ,next) => {
 
- AUTH.currentPath = to.path
+//  AUTH.currentPath = to.path
+//  let beforeEnter = (to, from, next) => {
+    AUTH.currentPath = to.path
+    if (to.meta.tokenRequired == true) {
+        // let token = sessionStorage.getItem("Username")
+        // if (token != null) {
+        if ( AUTH.user != null){
+            next()
+        } else {
+            next({ path: '/login' })
+        }
+    } 
+    next()
+    
+}
 //  let userID = parseInt(localStorage.getItem('accout_id'))
 // let token = localStorage.getItem('usertoken')
 // if(token !== null && userID > 0){
 // if(to.path === '/' || to.path === '/'){
-// next({path: '/templates'})
-// }else if(to.meta.tokenRequired === true){
-// next({path: '/'})
-// }else{
+// next({path: '/templates'})// }else
+//  if(to.meta.tokenRequired === true){
+//      if(AUTH.user !=null){
+//         next()
+//      }else{
+//         next({path:'/login'})
+//    }
+// }
+
 // next()
-// }
-// }
-next()
 // let userID = parseInt(localStorage.getItem('account_id'))
 // let token  = localStorage.getItem('usertoken')
 // // if(token !== null && )
 //console.log();
 // next()
 
-}
+// }
 
 var devRoutes = [] ;
 let app = require('router/app.js')

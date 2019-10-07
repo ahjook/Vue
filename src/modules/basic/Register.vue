@@ -9,7 +9,7 @@
           style="margin-top:20%"
         ></b-card>
         <br>
-          <b-form @submit="onSubmit" v-if="show">
+          <b-form @submit="onSubmit">
             <b-form-group id="UserName" label="Username" label-for="username">
               <b-form-input
                 id="username"
@@ -64,6 +64,7 @@
 </template>
 <script>
 import AUTH from 'services/auth'
+import $ from 'jquery'
 export default {
   data() {
     return {
@@ -83,12 +84,24 @@ export default {
       sessionStorage.setItem("Email", this.form.userEmail)
       sessionStorage.setItem("Password", this.form.password)
       AUTH.register(this.form.email, this.form.password)
-     }
+     },
       // checkForm(event) {
       //   event.preventDefault();
       //   event.target.classList.add('was-validated');
       // }
+      register(){
+        let link= `http://localhost:3000/db/create/${this.form.username}/${this.form.email}/${this.form.password}`
+        $.ajax({
+          url: link,
+          method: 'GET',
+          headers: {
+          'Access-Control-Allow-Origin':'*'
+        }
+      }).then(response =>{
+        alert(response.username)
+      })
     }
+  }
 };
 </script>
 

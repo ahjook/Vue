@@ -9,7 +9,7 @@
           style="margin-top:20%"
         ></b-card>
       <br>
-        <b-form @submit="onSubmit" v-if="show">
+        <b-form @submit="onSubmit">
           <b-form-group id="username" label="Username" label-for="username" >
             <b-form-input
               id="username"
@@ -49,6 +49,7 @@
 //eslint-disable-next-line
 /*eslint-disable*/
 import AUTH from 'services/auth'
+import $ from 'jquery'
  export default {
   data() {
     return {
@@ -65,6 +66,18 @@ import AUTH from 'services/auth'
       evt.preventDefault();
       AUTH.login(this.form.email, this.form.password)
       console.log(JSON.stringify(this.form));
+    },
+    login(){
+      let link= 'http://localhost:3000/user'
+      $.ajax({
+        url: link,
+        method: 'POST',
+        headers: {
+          'Access-Control-Allow-Origin':'*'
+        }
+      }).then(response =>{
+        alert(response.username)
+      })
     }
   }
 };

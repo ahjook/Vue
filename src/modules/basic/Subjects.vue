@@ -9,7 +9,7 @@
             <label id="Subject">Subject:</label>
                 <b-form-input v-model="infos.subject" id="subject" size="lg"></b-form-input>
             <label id="teacher">Teacher:</label><br>
-                <b-form-input v-model="infos.teacher" id="teacher" size="lg"></b-form-input><br>
+                <b-form-input v-model="infos.teacher" id="teacher" size="lg"></b-form-input>
             <label id="time">Time:</label>
                 <b-form-input v-model="infos.time" id="time" size="lg"></b-form-input>
             <label id="time">Day:</label>
