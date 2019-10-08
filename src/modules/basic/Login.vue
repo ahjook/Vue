@@ -67,18 +67,18 @@ import $ from 'jquery'
       AUTH.login(this.form.email, this.form.password)
       console.log(JSON.stringify(this.form));
     },
-    login(){
-      let link= 'http://localhost:3000/user'
-      $.ajax({
-        url: link,
-        method: 'POST',
-        headers: {
-          'Access-Control-Allow-Origin':'*'
-        }
-      }).then(response =>{
-        alert(response.username)
-      })
-    }
+    // login(){
+    //   let link= 'http://localhost:3000/user'
+    //   $.ajax({
+    //     url: link,
+    //     method: 'POST',
+    //     headers: {
+    //       'Access-Control-Allow-Origin':'*'
+    //     }
+    //   }).then(response =>{
+    //     alert(response.username)
+    //   })
+    // }
   }
 };
 </script>

@@ -20,6 +20,7 @@ export default {
         for(let i = 0; i < this.registeredUser.length; i++){
             if(this.registeredUser[i].username === username && this.registeredUser[i].password === password){
                 ROUTER.push('/dashboard')
+                this.setUser(username)
                 return this.registeredUser[i]           
             }
         }
@@ -45,7 +46,10 @@ export default {
         }
         alert('Update Succesfully!')
         ROUTER.push('/Account')
-    }
+    },
+    // post(username) {
+
+    // }
     
 
 

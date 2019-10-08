@@ -44,4 +44,10 @@ export default {
   }
 };
 </script> 
+<style scoped>
+  .v-sidebar-menu {
+    height:91%;
+    margin-top:63px;
+  }
+</style>
 
