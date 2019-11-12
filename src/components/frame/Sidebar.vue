@@ -35,6 +35,11 @@ export default {
          icon: "fa fa-user"
         },
         {
+          href: "/AboutUs",
+          title: "About Us",
+          icon: "fa fa-user"
+        },
+        {
           href: "/Login",
           title: "Logout",
           icon: "fa fa-user"
