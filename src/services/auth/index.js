@@ -3,6 +3,7 @@ import ROUTER from 'router';
 export default {
     user: null,
     registeredUser: [],
+    subjects:[],
     setUser(user){
         this.user = user
     },
@@ -30,6 +31,7 @@ export default {
         this.registeredUser = null
         ROUTER.push('/login')
     },
+
     addSubjects(teacher, time, day, room) {
         this.subjects.push({
             teacher: teacher,
@@ -47,6 +49,10 @@ export default {
         alert('Update Succesfully!')
         ROUTER.push('/Account')
     },
+    // addPosts(post) {
+    //     this.post.push({
+    //     });
+    // },
     // post(username) {
 
     // }

@@ -28,7 +28,7 @@ export default {
         name: 'dashboard',
         component: resolve => require(['modules/basic/Dashboard.vue'], resolve),
         meta: {
-            tokenRequired: false
+            tokenRequired: true
         },
     },
     {
@@ -36,7 +36,7 @@ export default {
         name: 'account',
         component: resolve => require(['modules/basic/Account.vue'], resolve),
         meta: {
-            tokenRequired: false
+            tokenRequired: true
         },
     },
     {
@@ -44,7 +44,7 @@ export default {
         name: 'subjects',
         component: resolve => require(['modules/basic/Subjects.vue'], resolve),
         meta: {
-            tokenRequired: false
+            tokenRequired: true
         },
     },
     {
@@ -52,8 +52,17 @@ export default {
         name:'Profile',
         component: resolve => require(['modules/basic/Profile.vue'], resolve),
         meta: {
-            tokenRequired: false
+            tokenRequired: true
         },
+    },
+    {
+        path:'/timeline',
+        name:'Timeline',
+        component: resolve => require(['modules/basic/Timeline.vue'], resolve),
+        meta: {
+            tokenRequired: true
+    },
+        
     
     }]
 }

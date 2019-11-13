@@ -4,7 +4,7 @@
     </div>
     <div id="card">
      <center><div>
-        <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
+        <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="user"></b-img>
       </div></center><hr>
       <b-card no-body class="overflow-hidden" id="hello" >
         <b-row no-gutters>
@@ -26,7 +26,7 @@
 
 <style>
 .jumbotron{
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     margin-bottom:0px;
 }
@@ -39,6 +39,10 @@
 #hello {
      background-color:transparent;
      max-height: 560px;
+}
+#user {
+  width: 40%;
+  height: auto;
 }
 
 </style>

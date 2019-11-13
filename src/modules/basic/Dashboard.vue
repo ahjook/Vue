@@ -5,32 +5,9 @@
     <div>
       <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
       <hr />
-      <h2>Hi {{Uname}},</h2>
-      <!-- <h2>Welcome to your Dashboard</h2> -->
+      <h3>Hi {{Uname}},</h3><br><br>
+      <!-- <center><h2>Welcome to your Dashboard</h2></center> -->
     </div>
-    <p></p>
-    <center>
-      <h2>Timeline</h2>
-    </center>
-    <div class="card">
-      <center>
-        <div>
-          <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
-          <br />
-          <h2>{{Uname}}</h2>
-        </div>
-      </center>
-      <hr />
-      <textarea id="text">Type text here...</textarea>
-      <br />
-      <!-- <b-img :src="require('assets/pic.png')" rounded="circle" alt="Circle image" id="userIcon"></b-img>
-      <h2>{{Uname}}</h2>-->
-      <button type="button" class="btn btn-primary" id="btnPost">post</button>
-    </div>
-    <br />
-    <center>
-      <b-card text-align id="text" img-top tag="article" style="max-width: 40rem;" class="mb-2y"></b-card>
-    </center>
   </div>
 </template>
 <style scoped>
@@ -47,7 +24,7 @@
   height: auto;
 }
 h2 {
-  font-size: 20px;
+  font-size: 50px;
 }
 #text {
   width: 550px;

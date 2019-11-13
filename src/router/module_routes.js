@@ -1,20 +1,20 @@
- import AUTH from '../services/auth'
+import AUTH from 'services/auth'
 let beforeEnter = (to ,from ,next) => {
 
 //  AUTH.currentPath = to.path
 //  let beforeEnter = (to, from, next) => {
-    AUTH.currentPath = to.path
-    if (to.meta.tokenRequired == true) {
+    // AUTH.currentPath = to.path
+    if (to.meta.tokenRequired === true ) {
         // let token = sessionStorage.getItem("Username")
         // if (token != null) {
-        if ( AUTH.user != null){
+        if ( AUTH.user !== null){
             next()
         } else {
             next({ path: '/login' })
         }
-    } 
+    } else{
     next()
-    
+    }
 }
 //  let userID = parseInt(localStorage.getItem('accout_id'))
 // let token = localStorage.getItem('usertoken')
@@ -51,7 +51,8 @@ let routes = [
     name:'home',
     components:resolve => require (['modules/basic/Login.vue'] ,resolve),
     beforeEnter:beforeEnter
-}]
+}
+]
 //export
 routes = routes.concat(devRoutes)
 export default{

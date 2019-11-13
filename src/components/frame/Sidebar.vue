@@ -3,9 +3,11 @@
 </template>
  
 <script>
+import AUTH from 'services/auth'
 export default {
   data() {
     return {
+      auth:AUTH,
       menu: [
         {
           header: true,
@@ -15,7 +17,13 @@ export default {
         {
           href: "/Dashboard",
           title: "Dashboard",
-          icon: "fa fa-user"
+          icon: "fa fa-user",
+          child: [
+            {
+              href: '/Timeline',
+              title: 'Timeline'
+            }
+          ]
         },
         {
           href: "/Account",
