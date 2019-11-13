@@ -48,6 +48,14 @@ export default {
         },
     },
     {
+        path: '/aboutus',
+        name: 'aboutUs',
+        component: resolve => require(['modules/basic/AboutUs.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        },
+    },
+    {
         path:'/profile',
         name:'Profile',
         component: resolve => require(['modules/basic/Profile.vue'], resolve),
