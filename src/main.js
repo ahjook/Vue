@@ -7,14 +7,16 @@ import router from'./router';
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import { CardPlugin } from 'bootstrap-vue'
+Vue.config.productionTip = true;
 Vue.use(CardPlugin)
 Vue.use(VueSidebarMenu)
 
-Vue.config.productionTip = false
+
 Vue.use(BootstrapVue)
 new Vue({
   render: h => h(App),
   router: router,
   template: '<router-view></router-view>'
 }).$mount('#app')
+
 

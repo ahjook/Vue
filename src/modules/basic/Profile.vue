@@ -14,12 +14,12 @@
               fluid
               v-b-tooltip.hover.top
               title="Change your Avatar"
-              src="https://picsum.photos/250/250/?image=59"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAbWaFoCWis0v0glUMFab42PBZ3Y0_Z8UJAjxErDyJRz2vY7kN"
               alt="Image 3"
               id="userIcon"
             ></b-img>
             <center>
-              <p>Hi {{Uname}}</p>
+              <h1>Hi {{Uname}}</h1>
             </center>
             <!-- </v-hover> -->
           </b-col>
@@ -143,5 +143,20 @@ export default {
 }
 .mt-4{
   border-color:#BB6BD9;;
+}
+.img-thumbnail{
+  border: 1px solid #BB6BD9;  
+}
+.form-control {
+  border: 1px solid #BB6BD9;
+}
+.btn-outline-primary {
+  color:#BB6BD9;
+  border-color:#BB6BD9;
+}
+hr{
+  border-top: 1px solid #BB6BD9;
+  margin-top:1rem;
+  margin-bottom:1rem;
 }
 </style>

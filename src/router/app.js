@@ -64,12 +64,21 @@ export default {
         },
     },
     {
+        path:'/sample',
+        name:'Sample',
+        component: resolve => require(['modules/basic/Sample.vue'], resolve),
+        meta: {
+            tokenRequired: true
+        },
+    },
+    {
         path:'/timeline',
         name:'Timeline',
         component: resolve => require(['modules/basic/Timeline.vue'], resolve),
         meta: {
             tokenRequired: true
     },
+   
         
     
     }]

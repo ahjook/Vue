@@ -32,7 +32,11 @@ export default {
           child: [
             {
               href: '/Profile',
-              title: 'Edit Profile'
+              title: 'Personal Info.'
+            },
+            {
+              href:'/Sample',
+              title:'Edit Profile'
             }
           ]
         },
