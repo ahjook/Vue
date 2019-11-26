@@ -10,17 +10,32 @@
         <b-row>
           <b-col cols="4">
             <b-img
-              thumbnail
-              fluid
-              v-b-tooltip.hover.top
-              title="Change your Avatar"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAbWaFoCWis0v0glUMFab42PBZ3Y0_Z8UJAjxErDyJRz2vY7kN"
               alt="Image 3"
+              accept=image;
               id="userIcon"
-            ></b-img>
-            <center>
+             ></b-img>
+             <div>
+               <span>
+                 <center><br>
+                 <button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
+                @click="submitFile()">Upload</button>
+                 <h1>Hi {{Uname}}</h1> </center>
+
+               </span>
+             </div>
+            <!-- <label>Files
+          <input type="file" id="files" ref="files" accept="image" @change="method($event)"/> -->
+            <!-- <center><br><button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
+              @click="submitFile()">Upload</button></center>
+                 <h1>Hi {{Uname}}</h1> -->
+          <!-- </label> -->
+<!--            
+            <center><br>
+              <button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
+              @click="submitFile()">Upload</button>
               <h1>Hi {{Uname}}</h1>
-            </center>
+            </center> -->
             <!-- </v-hover> -->
           </b-col>
           <b-col cols="8">
@@ -92,6 +107,7 @@
 
 <script>
 import AUTH from "services/auth";
+// import $ from 'jquery';
 export default {
   data() {
     return {
@@ -121,7 +137,31 @@ export default {
         (this.address = ""),
         (this.phone = ""),
         (this.password = "");
-    }
+    },
+    // addImage(){
+    //     $("#images")[0].click();
+    // },
+    // setUploadFile(event){
+    //     let files = event.target.files ||
+    //       event.dataTransfer.files
+    //     if(!files.length){
+    //       return false;
+    //     }else{
+    //       this.files = files[0]
+    //       this.createFiles(files[0])
+    //     }
+    // },
+    // Upload(){
+    //   let formData = new FormData()
+    //   formData.append('files' , this.files)
+    //   formData.append('files_url',this.file.name)
+    // },
+    // createFile(file){
+    //   let fileReader = new FileReader()
+    //   FileReader.readerDataURL(file)
+    //   this.upload()
+    // }
+
   }
 };
 </script>
