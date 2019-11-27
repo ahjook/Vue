@@ -2,7 +2,8 @@
   <div id="container">
     <div>
       <center>
-        <h1>Profile</h1><hr>
+        <h1>Profile</h1>
+        <hr />
       </center>
     </div>
     <div class="mt-4">
@@ -10,33 +11,32 @@
         <b-row>
           <b-col cols="4">
             <b-img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAbWaFoCWis0v0glUMFab42PBZ3Y0_Z8UJAjxErDyJRz2vY7kN"
+              thumbnail
+              flui
+              v-b-tooltip.hover.top
+              title="Change your Avatar"
+              :src="imgUrl"
               alt="Image 3"
-              accept=image;
+              accept="image;"
               id="userIcon"
-             ></b-img>
-             <div>
-               <span>
-                 <center><br>
-                 <button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
-                @click="submitFile()">Upload</button>
-                 <h1>Hi {{Uname}}</h1> </center>
-
-               </span>
-             </div>
-            <!-- <label>Files
-          <input type="file" id="files" ref="files" accept="image" @change="method($event)"/> -->
-            <!-- <center><br><button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
-              @click="submitFile()">Upload</button></center>
-                 <h1>Hi {{Uname}}</h1> -->
-          <!-- </label> -->
-<!--            
-            <center><br>
-              <button thumbnail flui v-b-tooltip.hover.top title="Change your Avatar"
-              @click="submitFile()">Upload</button>
-              <h1>Hi {{Uname}}</h1>
-            </center> -->
-            <!-- </v-hover> -->
+              @click="$refs.file.click()"
+            ></b-img>
+            <div>
+              <span>
+                <input
+                  type="file"
+                  id="file"
+                  @change="handleFileUpload()"
+                  ref="file"
+                  style="display:none"
+                />
+                <center>
+                  <br />
+                  <button :disabled="file.length" class="btn btn-outline-primary" @click="submit">Upload</button>
+                  <h1>Hi {{Uname}}</h1>
+                </center>
+              </span>
+            </div>
           </b-col>
           <b-col cols="8">
             <div class="form-group">
@@ -107,11 +107,15 @@
 
 <script>
 import AUTH from "services/auth";
-// import $ from 'jquery';
+import axios from "axios";
+import $ from "jquery";
 export default {
   data() {
     return {
+      imgUrl:
+        "https://lakewangaryschool.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg",
       auth: AUTH,
+      file: "",
       fullname: "",
       username: "",
       email: "",
@@ -138,9 +142,47 @@ export default {
         (this.phone = ""),
         (this.password = "");
     },
-    // addImage(){
-    //     $("#images")[0].click();
-    // },
+    addImage() {
+      $("#images")[0].click();
+    },
+    handleFileUpload() {
+      this.file = this.$refs.file.files[0];
+      this.imgUrl = URL.createObjectURL(this.file);
+    },
+
+    submit() {
+      /*
+                Initialize the form data
+            */
+      let formData = new FormData();
+
+      /*
+                Add the form data we need to submit
+            */
+      formData.append("img", this.file);
+      /*
+          Make the request to the POST /single-file URL
+        */
+      axios
+        .post("http://localhost:3000/uploadSingle", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        })
+        .then((res)=> {
+          console.log(res);
+          
+         this.imgUrl = res.data.filename;
+        })  
+        .catch((err)=> {
+          console.log(err);
+        });
+    }
+
+    /*
+        Handles a change on the file upload
+      */
+
     // setUploadFile(event){
     //     let files = event.target.files ||
     //       event.dataTransfer.files
@@ -161,7 +203,6 @@ export default {
     //   FileReader.readerDataURL(file)
     //   this.upload()
     // }
-
   }
 };
 </script>
@@ -173,7 +214,7 @@ export default {
 }
 .card {
   background-color: transparent;
-  border: 2px solid ;
+  border: 2px solid;
 }
 #userIcon {
   width: 100%;
@@ -181,22 +222,22 @@ export default {
   margin-left: 1px;
   margin-top: 10px;
 }
-.mt-4{
-  border-color:#BB6BD9;;
+.mt-4 {
+  border-color: #bb6bd9;
 }
-.img-thumbnail{
-  border: 1px solid #BB6BD9;  
+.img-thumbnail {
+  border: 1px solid #bb6bd9;
 }
 .form-control {
-  border: 1px solid #BB6BD9;
+  border: 1px solid #bb6bd9;
 }
 .btn-outline-primary {
-  color:#BB6BD9;
-  border-color:#BB6BD9;
+  color: #bb6bd9;
+  border-color: #bb6bd9;
 }
-hr{
-  border-top: 1px solid #BB6BD9;
-  margin-top:1rem;
-  margin-bottom:1rem;
+hr {
+  border-top: 1px solid #bb6bd9;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 </style>
