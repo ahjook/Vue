@@ -32,8 +32,8 @@
                 />
                 <center>
                   <br />
+                   <h1>Hi {{Uname}}</h1>
                   <button :disabled="file.length" class="btn btn-outline-primary" @click="submit">Upload</button>
-                  <h1>Hi {{Uname}}</h1>
                 </center>
               </span>
             </div>
@@ -87,19 +87,20 @@
                 v-model="password"
               ></b-form-input>
             </div>
+              <center>
+              <button
+                type="button"
+                class="btn btn-outline-primary login-btn"
+                id="btnLogin"
+                @click="save"
+              >Save changes</button>
+            </center>
           </b-col>
         </b-row>
       </b-container>
     </div>
 
-    <center>
-      <button
-        type="button"
-        class="btn btn-outline-primary login-btn"
-        id="btnLogin"
-        @click="save"
-      >Save changes</button>
-    </center>
+  
     <br />
     <br />
   </div>
@@ -217,9 +218,9 @@ export default {
   border: 2px solid;
 }
 #userIcon {
-  width: 100%;
+  width: 80%;
   height: 60%;
-  margin-left: 1px;
+  margin-left: 60px;
   margin-top: 10px;
 }
 .mt-4 {
