@@ -35,7 +35,7 @@
                 />
                 <center>
                   <br />
-                  <button :disabled="file.length" id="button" class="btn btn" @click="submit">Update Profile</button>
+                  <button :disabled="file.length" id="button" class="border border" @click="submit">Update Profile</button>
                   <br><h1>Hi {{Uname}}</h1>
                 </center>
               </span>
@@ -253,6 +253,10 @@ hr {
   margin-right: 17.5rem;
 }
 #button{
-  background-color: #bb6bd9;
+   background-color: transparent;
+}
+.border {
+  border-color: #bb6bd9;
+  border-radius: 0.25rem;
 }
 </style>
