@@ -9,6 +9,8 @@
     <div class="mt-4">
       <b-container fluid class>
         <b-row>
+          <b-col cols="2">
+          </b-col>
           <b-col cols="4">
             <b-img
               thumbnail
@@ -19,6 +21,7 @@
               alt="Image 3"
               accept="image;"
               id="userIcon"
+              rounded="circle"
               @click="$refs.file.click()"
             ></b-img>
             <div>
@@ -32,13 +35,13 @@
                 />
                 <center>
                   <br />
-                   <h1>Hi {{Uname}}</h1>
-                  <button :disabled="file.length" class="btn btn-outline-primary" @click="submit">Upload</button>
+                  <button :disabled="file.length" id="button" class="btn btn" @click="submit">Update Profile</button>
+                  <br><h1>Hi {{Uname}}</h1>
                 </center>
               </span>
             </div>
           </b-col>
-          <b-col cols="8">
+          <b-col cols="4">
             <div class="form-group">
               <label for="fullname">Full Name</label>
               <b-form-input
@@ -87,6 +90,7 @@
                 v-model="password"
               ></b-form-input>
             </div>
+            <br>
               <center>
               <button
                 type="button"
@@ -96,13 +100,14 @@
               >Save changes</button>
             </center>
           </b-col>
+          <b-col cols="2">
+          </b-col>
         </b-row>
       </b-container>
     </div>
-
-  
-    <br />
-    <br />
+    <br>
+    <br>
+    <hr>
   </div>
 </template>
 
@@ -116,7 +121,7 @@ export default {
       imgUrl:
         "https://lakewangaryschool.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg",
       auth: AUTH,
-      file: "",
+      file:'',
       fullname: "",
       username: "",
       email: "",
@@ -142,6 +147,7 @@ export default {
         (this.address = ""),
         (this.phone = ""),
         (this.password = "");
+        (this.file);
     },
     addImage() {
       $("#images")[0].click();
@@ -218,11 +224,14 @@ export default {
   border: 2px solid;
 }
 #userIcon {
-  width: 80%;
-  height: 60%;
+  width: 75%;
+  height: 70%;
   margin-left: 60px;
   margin-top: 10px;
 }
+/* h1{
+  color:#bb6bd9;
+} */
 .mt-4 {
   border-color: #bb6bd9;
 }
@@ -240,5 +249,10 @@ hr {
   border-top: 1px solid #bb6bd9;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-left: 21rem;
+  margin-right: 17.5rem;
+}
+#button{
+  background-color: #bb6bd9;
 }
 </style>

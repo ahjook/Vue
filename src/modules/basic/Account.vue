@@ -17,6 +17,7 @@
                     <h6>Email: {{email}}</h6>
                     <h6>Address: {{address}}</h6>
                     <h6>Phone: {{phone}}</h6>
+                    
                     <!-- <h6>Email: {{email}}</h6> -->
                 </b-card-text>
             </b-card-body>
