@@ -3,7 +3,7 @@
     <div>
       <center>
         <h1>Profile</h1>
-        <hr />
+        <hr/>
       </center>
     </div>
     <div class="mt-4">
@@ -34,80 +34,44 @@
                   style="display:none"
                 />
                 <center>
-                  <br />
-                  <button :disabled="file.length" id="button" class="border border" @click="submit">Update Profile</button>
-                  <br><h1>Hi {{Uname}}</h1>
+                   <p>Hi {{Uname}}</p>
+                  <button :disabled="file.length" id="button" class="border border" @click="submit">Upload</button>
                 </center>
               </span>
             </div>
           </b-col>
+      
           <b-col cols="4">
             <div class="form-group">
-              <label for="fullname">Full Name</label>
-              <b-form-input
-                required
-                type="text"
-                class="form-control"
-                id="fullname"
-                v-model="fullname"
-              ></b-form-input>
-            </div>
-            <div class="form-group">
               <label for="username" class="bmd-label-floating">Username</label>
-              <b-form-input
-                required
-                type="text"
-                class="form-control"
-                id="Username"
-                v-model="username"
-              ></b-form-input>
+              <b-form-input required type="text" class="form-control" id="Username" v-model="username"  ></b-form-input>
             </div>
+
             <div class="form-group">
               <label for="email" class="bmd-label-floating">Email</label>
-              <b-form-input required type="email" class="form-control" id="Email" v-model="email"></b-form-input>
+              <b-form-input required 
+              type="email" class="form-control" id="Email" v-model="email"></b-form-input>
             </div>
-            <div class="form-group">
-              <label for="address" class="bmd-label-floating">Address</label>
-              <b-form-input
-                required
-                type="text"
-                class="form-control"
-                id="Address"
-                v-model="address"
-              ></b-form-input>
-            </div>
-            <div class="form-group">
-              <label for="phone" class="bmd-label-floating">PhoneNo.</label>
-              <b-form-input required type="text" class="form-control" id="phone" v-model="phone"></b-form-input>
-            </div>
+
             <div class="form-group">
               <label for="pwd" class="bmd-label-floating">Password</label>
-              <b-form-input
-                required
-                type="password"
-                class="form-control"
-                id="passw"
-                v-model="password"
-              ></b-form-input>
+              <b-form-input required type="password" class="form-control" id="passw" v-model="password"></b-form-input>
             </div>
-            <br>
-              <center>
-              <button
-                type="button"
-                class="btn btn-outline-primary login-btn"
-                id="btnLogin"
-                @click="save"
-              >Save changes</button>
-            </center>
-          </b-col>
+            
+
+            <div>
+              <br><center>
+                <button :disabled="state.isSending" id="button" class="border border">Update Profile</button>  
+              </center>
+            </div>
+
+           
+            </b-col>
           <b-col cols="2">
-          </b-col>
-        </b-row>
+          </b-col>  
+        </b-row> <hr>
       </b-container>
-    </div>
-    <br>
-    <br>
-    <hr>
+    </div><br><br>
   </div>
 </template>
 
@@ -118,34 +82,29 @@ import $ from "jquery";
 export default {
   data() {
     return {
+      show: true,
       imgUrl:
         "https://lakewangaryschool.sa.edu.au/wp-content/uploads/2017/11/placeholder-profile-sq.jpg",
       auth: AUTH,
       file:'',
-      fullname: "",
       username: "",
       email: "",
-      address: "",
-      phone: "",
       password: "",
-      Uname: sessionStorage.getItem("Username")
+      Uname: sessionStorage.getItem("Username"),
+      state: {
+        isSending: false
+      }
     };
   },
   methods: {
     save: function(e) {
       e.preventDefault();
-      sessionStorage.setItem("Fullname", this.fullname),
         sessionStorage.setItem("Username", this.username),
         sessionStorage.setItem("Email", this.email),
-        sessionStorage.setItem("Address", this.address),
-        sessionStorage.setItem("Phone", this.phone),
         sessionStorage.setItem("Password", this.password),
         // AUTH.save(this.username, this.email, this.password);
-        (this.fullname = ""),
         (this.username = ""),
         (this.email = ""),
-        (this.address = ""),
-        (this.phone = ""),
         (this.password = "");
         (this.file);
     },
@@ -224,10 +183,10 @@ export default {
   border: 2px solid;
 }
 #userIcon {
-  width: 75%;
-  height: 70%;
+  width: auto;
+  height: 65%;
   margin-left: 60px;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 /* h1{
   color:#bb6bd9;
@@ -240,6 +199,7 @@ export default {
 }
 .form-control {
   border: 1px solid #bb6bd9;
+  margin-top: 15px;
 }
 .btn-outline-primary {
   color: #bb6bd9;
@@ -258,5 +218,11 @@ hr {
 .border {
   border-color: #bb6bd9;
   border-radius: 0.25rem;
+}
+.col-4{
+  margin-top:50px;
+}
+p {
+  font-weight: bold;
 }
 </style>
