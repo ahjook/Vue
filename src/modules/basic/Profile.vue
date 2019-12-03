@@ -44,18 +44,18 @@
           <b-col cols="4">
             <div class="form-group">
               <label for="username" class="bmd-label-floating">Username</label>
-              <b-form-input required type="text" class="form-control" id="Username" v-model="username"  ></b-form-input>
+              <b-form-input required type="text" class="form-control" id="Username" v-model="username" disabled ></b-form-input>
             </div>
 
             <div class="form-group">
               <label for="email" class="bmd-label-floating">Email</label>
               <b-form-input required 
-              type="email" class="form-control" id="Email" v-model="email"></b-form-input>
+              type="email" class="form-control" id="Email" v-model="email" disabled></b-form-input>
             </div>
 
             <div class="form-group">
               <label for="pwd" class="bmd-label-floating">Password</label>
-              <b-form-input required type="password" class="form-control" id="passw" v-model="password"></b-form-input>
+              <b-form-input required type="password" class="form-control" id="passw" v-model="password" disabled></b-form-input>
             </div>
             
 
